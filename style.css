@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .head {
+    height: 100px;
+    background-color: aquamarine;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  #square {
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    border: 1px solid red;
+    display: flex;
+    height: 32vw;
+    width: 32vw;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  
+  
+  .buttons {
+    display: flex;
+    justify-content: center;
+  }
+  
+  /*[class*=grid]:hover {
+    background-color: blue;
+  }*/
