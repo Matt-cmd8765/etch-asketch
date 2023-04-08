@@ -1,39 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
+
 body {
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin: 0;
-    padding: 0;
-  }
-  
+    padding: 0;    
+    background-color: rgb(124, 236, 221);
+}
   .head {
     height: 100px;
-    background-color: aquamarine;
+    align-self: center;
+    font-size: larger;
+    font-family: Delicious Handrawn;
+    color: rgb(180, 158, 29);
   }
   
   .container {
     display: flex;
     justify-content: center;
+    padding-bottom: 5vw;
   }
   
   #square {
     padding: 0;
     margin: 0;
     justify-content: center;
-    border: 1px solid red;
+    border: 2vw solid red;
+    background-color: white;
     display: flex;
     height: 32vw;
     width: 32vw;
+    border-radius: 2vw;
     flex-wrap: wrap;
     flex-direction: row;
   }
   
-  
+  button {
+    border-radius: 8px;
+    margin: 1vw;
+    font-family: Delicious Handrawn;
+    background-color: gold;
+    color: aliceblue;
+    padding: 5px 10px;
+}
+
   .buttons {
     display: flex;
     justify-content: center;
   }
   
-  /*[class*=grid]:hover {
-    background-color: blue;
-  }*/
+.footer {
+    color: #f9faf8;
+    background-color: rgba(128, 56, 15, 0.842);
+    font-weight: bold;
+    flex: 0 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

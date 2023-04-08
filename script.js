@@ -1,7 +1,6 @@
 // Initial calling of the makeGrid function
 makeGrid();
 
-
 // Call the slider by it's ID
 let slider = document.getElementById('myRange');
 
@@ -51,31 +50,57 @@ function makeGrid() {
 const rgb = document.getElementById('rgb');
 rgb.addEventListener('click', function () {
     const changeColor = document.querySelectorAll('.grid');
+    let mouseisdown = false;
     //Loop through node list
     changeColor.forEach( (grid) => {
-        //change background color of each div when mouse passes over. 
-        grid.addEventListener('mouseleave', function() {
-            let rainbow1 = Math.floor(Math.random() * 255);
-            let rainbow2 = Math.floor(Math.random() * 255);
-            let rainbow3 = Math.floor(Math.random() * 255);
-            grid.style.backgroundColor = `rgb(${rainbow1},${rainbow2},${rainbow3})`;
+        //change background color of each div when mouse is down over divs. 
+        grid.addEventListener('mouseenter', function() {
+            grid.addEventListener('mousedown', function(){mouseisdown = true;});
+            grid.addEventListener('mouseup', function() {mouseisdown = false});
+            if (mouseisdown) {
+                let rainbow1 = Math.floor(Math.random() * 255);
+                let rainbow2 = Math.floor(Math.random() * 255);
+                let rainbow3 = Math.floor(Math.random() * 255);
+                grid.style.backgroundColor = `rgb(${rainbow1},${rainbow2},${rainbow3})`;
+            }
         });
     });
 });
 
-//Make rainbow colored squares
+//Make black colored squares
 const black = document.getElementById('black');
 black.addEventListener('click', function () {
     const changeColor = document.querySelectorAll('.grid');
+    let mouseisdown = false;
     //Loop through node list
     changeColor.forEach( (grid) => {
-        //change background color of each div when mouse passes over. 
-        grid.addEventListener('mouseleave', function() {
-            grid.style.backgroundColor = 'black';
+        //change background color of each div when when mouse is down over divs. 
+        grid.addEventListener('mouseenter', function() {
+            grid.addEventListener('mousedown', function(){mouseisdown = true;});
+            grid.addEventListener('mouseup', function() {mouseisdown = false});
+            if (mouseisdown) {
+                grid.style.backgroundColor = 'black';
+            }
         });
     });
 });
 
+//eraser button
+const eraser = document.getElementById('eraser');
+eraser.addEventListener('click', function () {
+    const changeColor = document.querySelectorAll('.grid');
+    let mouseisdown = false;
+    changeColor.forEach((grid) => {
+        // erases when mouse is down over the divs
+        grid.addEventListener('mouseenter', function() {
+            grid.addEventListener('mousedown', function(){mouseisdown = true;});
+            grid.addEventListener('mouseup', function() {mouseisdown = false});
+            if (mouseisdown) {
+                grid.style.backgroundColor = '';
+            }
+        });
+    })
+})
 
 
 // clear button
