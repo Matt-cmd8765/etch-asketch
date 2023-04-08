@@ -23,7 +23,8 @@ function makeGrid() {
     //get the value of the slider. 
     let sliderValue = document.getElementById('myRange').value;
     let sliderOutput = document.getElementById('slidevalue');
-    sliderOutput.textContent = `${sliderValue}`;
+    //outputs the current grid size
+    sliderOutput.textContent = `Grid size: ${sliderValue}`;
     let gridSize = sliderValue;
 
     //Create div # based on the slider value
@@ -43,7 +44,7 @@ function makeGrid() {
         let size = 32/gridSize;
         divs.style.height = `${size}vw`;
         divs.style.width = `${size}vw`;
-    });
+    })
 }
 
 //Make rainbow colored squares
@@ -63,9 +64,9 @@ rgb.addEventListener('click', function () {
                 let rainbow3 = Math.floor(Math.random() * 255);
                 grid.style.backgroundColor = `rgb(${rainbow1},${rainbow2},${rainbow3})`;
             }
-        });
-    });
-});
+        })
+    })
+})
 
 //Make black colored squares
 const black = document.getElementById('black');
@@ -81,9 +82,9 @@ black.addEventListener('click', function () {
             if (mouseisdown) {
                 grid.style.backgroundColor = 'black';
             }
-        });
-    });
-});
+        })
+    })
+})
 
 //eraser button
 const eraser = document.getElementById('eraser');
@@ -98,7 +99,7 @@ eraser.addEventListener('click', function () {
             if (mouseisdown) {
                 grid.style.backgroundColor = '';
             }
-        });
+        })
     })
 })
 
